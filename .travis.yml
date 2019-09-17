@@ -7,7 +7,7 @@ services:
 cache:
   directories:
     - .autoconf
-    - $HOME/.m2
+    - ~/.m2
     - node_modules
 before_script:
    - wget -qO- https://toolbelt.heroku.com/install.sh | sh
