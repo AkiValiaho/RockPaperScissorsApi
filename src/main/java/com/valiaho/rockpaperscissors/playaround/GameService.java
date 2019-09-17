@@ -1,8 +1,8 @@
 package com.valiaho.rockpaperscissors.playaround;
 
 import com.vaadin.flow.spring.annotation.SpringComponent;
-import com.valiaho.rockpaperscissors.playaround.domain.GameEntity;
-import com.valiaho.rockpaperscissors.playaround.domain.GameEntityFactory;
+import com.valiaho.rockpaperscissors.domain.GameEntity;
+import com.valiaho.rockpaperscissors.domain.GameEntityFactory;
 
 /**
  * Created by akivv on 16.9.2019.

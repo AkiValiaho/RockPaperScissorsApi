@@ -1,13 +1,12 @@
-package com.valiaho.rockpaperscissors.playaround.domain;
+package com.valiaho.rockpaperscissors.domain;
 
 import java.util.Set;
 
 /**
  * Created by akivv on 16.9.2019.
  */
-public class Paper extends GameEntity {
-
-    private Set<GameEntityType> beats = Set.of(GameEntityType.ROCK);
+class Rock extends GameEntity {
+    private Set<GameEntityType> beats = Set.of(GameEntityType.SCISSORS);
 
     @Override
     public boolean beats(GameEntity gameEntity) {
@@ -16,11 +15,11 @@ public class Paper extends GameEntity {
 
     @Override
     public String getName() {
-        return "paper";
+        return "rock";
     }
 
     @Override
     public GameEntityType getType() {
-        return GameEntityType.PAPER;
+        return GameEntityType.ROCK;
     }
 }

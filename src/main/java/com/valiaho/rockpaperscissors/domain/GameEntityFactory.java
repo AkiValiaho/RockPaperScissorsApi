@@ -1,4 +1,4 @@
-package com.valiaho.rockpaperscissors.playaround.domain;
+package com.valiaho.rockpaperscissors.domain;
 
 import java.util.Map;
 import java.util.Optional;
