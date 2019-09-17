@@ -1,6 +1,5 @@
 package com.valiaho.rockpaperscissors.playaround;
 
-import ch.carnet.kasparscherrer.VerticalScrollLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Paragraph;
@@ -48,7 +47,7 @@ public class MainView extends HorizontalLayout {
         add(verticalLayout);
 
 
-        messageLayout = new VerticalScrollLayout();
+        messageLayout = new VerticalLayout();
         add(messageLayout);
 
         this.submitButton.addClickListener(clickEvent -> playRound(selectWhatToPlay.getValue(), wins, losses, draws));
