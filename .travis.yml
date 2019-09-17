@@ -4,8 +4,3 @@ cache:
     - .autoconf
     - $HOME/.m2
     - node_modules
-deploy:
-  provider: heroku
-  api_key:
-    secure: "TrgrMfF2iYw1kGsHM/BCSOz6CF8RKkYNuF0o0Qx0JwBeS8u53ATBvtRh32do5/tjZrwlVuh7G3MGUKGWpZX1+grk7AkhyFZXAC26xrZymFzv59y9qHUXIspTMLczBN4ZR3ef9oAhW5F9T+d5HQucI6MB4J/dbuDtB++94tvDbUtyBT2AjYi6Xf2cGKQ9vhFN49veVQFuczSbCI6OhK5Gsb7G8YuBnJCJ2HoGxWUaU6ZmAkljZIKhaY//RvswI1kho/yAQoYQowNWiZuTfg6S0kJkTNLH9lxMhjo9fTptBikF/lcy2FsuLJb9WaeFYRNeIXh5pY9fOCPviMFWpkxy8fJjqD0/aUjRLHi6BdYHLhRSsDvibfqA4YnjFGQsnhaLV42lQP/apY0HIkcyM5+GTIxGeanSxDqxcX+Y1RMn6IX9iVgtVrDDpewET25Gfhj+gtO7Re5wnuhdmg7eV2RXT7sFPSrvIwE+P5Ma/l6najwy2rCk5h/mKqVLFUqxzBJ6p3W5fwUwZsg7Xl3Szq9IbdJQfmPXAohqgo0i81c2c4YsLxjShYqb7AM4+ipQAceRRRTzXHxMdS9Q7P1e87RwvFujJl2I9UiJaa1rx2d84IwCpJi97FgIGX/gpc8k+Osj8X77hf/4sQcS3bmBsS2qFzlSgDVkeCBsIDtotcuvlJI="
-  app: rockpaperscissorsaki
