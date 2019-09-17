@@ -1,6 +1,15 @@
 language: java
+services:
+  - docker
 cache:
   directories:
     - .autoconf
     - $HOME/.m2
     - node_modules
+before_install:
+  - docker pull openjdk:9
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master

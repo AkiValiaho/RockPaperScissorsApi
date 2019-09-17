@@ -10,7 +10,7 @@ public abstract class GameEntity {
 
     public abstract GameEntityType getType();
 
-    enum GameEntityType {
+    public enum GameEntityType {
         PAPER, ROCK, SCISSORS
     }
 }

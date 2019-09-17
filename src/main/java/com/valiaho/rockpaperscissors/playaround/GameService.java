@@ -1,45 +1,38 @@
 package com.valiaho.rockpaperscissors.playaround;
 
-import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.valiaho.rockpaperscissors.domain.GameEntity;
 import com.valiaho.rockpaperscissors.domain.GameEntityFactory;
+import lombok.Data;
+import org.springframework.stereotype.Service;
 
-/**
- * Created by akivv on 16.9.2019.
- */
-@SpringComponent
+@Service
 class GameService {
-    Tuple<String, GameResult> processRound(String played) {
+    RoundResponse playARound(GameEntity.GameEntityType gameEntity) {
         GameEntity randomPlayed = GameEntityFactory.getRandomPlayed();
-        GameEntity playersChoice = GameEntityFactory.from(played).orElseThrow(() -> new RuntimeException("Game entity not recognized"));
+        GameEntity playersChoice = GameEntityFactory.from(gameEntity).orElseThrow(() -> new RuntimeException("Game entity not recognized"));
         if (randomPlayed.beats(playersChoice)) {
-            return new Tuple<>("The computer picked " + randomPlayed.getName() + ", you lose", GameResult.LOSS);
+            return new RoundResponse("The computer picked " + randomPlayed.getName() + ", you lose", RoundResult.LOSS);
         }
         if (playersChoice.beats(randomPlayed)) {
-            return new Tuple<>("You beat computer who chose: " + randomPlayed.getName() + "!", GameResult.WIN);
+            return new RoundResponse("You beat computer who chose: " + randomPlayed.getName() + "!", RoundResult.WIN);
         }
-        return new Tuple<>("It's a draw! Computer picked " + randomPlayed.getName(), GameResult.DRAW);
+        return new RoundResponse("It's a draw! Computer picked " + randomPlayed.getName(), RoundResult.DRAW);
     }
 
-    public enum GameResult {
+    public enum RoundResult {
         WIN, LOSS, DRAW
     }
 
-    static class Tuple<T, T1> {
-        private final T1 secondParam;
-        private final T firstParam;
+    @Data
+    static class RoundResponse {
+        private final String text;
+        private final GameService.RoundResult result;
 
-        Tuple(T firstParam, T1 secondParam) {
-            this.firstParam = firstParam;
-            this.secondParam = secondParam;
+
+        RoundResponse(String secondParam, GameService.RoundResult firstParam) {
+            this.text = secondParam;
+            this.result= firstParam;
         }
 
-        T getleft() {
-            return firstParam;
-        }
-
-        T1 getright() {
-            return secondParam;
-        }
     }
 }

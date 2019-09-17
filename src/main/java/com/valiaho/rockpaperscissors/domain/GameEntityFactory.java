@@ -18,8 +18,8 @@ public class GameEntityFactory {
         return gameEntityNumbersMap.get(randomToChoose).get();
     }
 
-    public static Optional<GameEntity> from(String played) {
-        return Optional.ofNullable(gameEntityNamesMap.get(played.toLowerCase()).get());
+    public static Optional<GameEntity> from(GameEntity.GameEntityType played) {
+        return Optional.ofNullable(gameEntityNamesMap.get(played.name().toLowerCase()).get());
     }
 
 }
