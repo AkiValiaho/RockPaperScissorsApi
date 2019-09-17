@@ -1,5 +1,8 @@
 package com.valiaho.rockpaperscissors.domain;
 
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
+
 import java.util.Set;
 
 /**
@@ -7,6 +10,12 @@ import java.util.Set;
  */
 public class Scissors extends GameEntity {
     private Set<GameEntityType> beats = Set.of(GameEntityType.PAPER);
+    private MessageSource messageSource;
+
+    @Override
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
 
     @Override
     public boolean beats(GameEntity gameEntity) {
@@ -15,7 +24,7 @@ public class Scissors extends GameEntity {
 
     @Override
     public String getName() {
-        return "scissors";
+        return messageSource.getMessage("scissors", null, LocaleContextHolder.getLocale());
     }
 
     @Override

@@ -3,15 +3,24 @@ package com.valiaho.rockpaperscissors.playaround;
 import com.valiaho.rockpaperscissors.domain.GameEntity;
 import com.valiaho.rockpaperscissors.domain.GameEntityFactory;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
 class GameService {
+    @Autowired
+    private MessageSource messageSource;
+    @Autowired
+    private GameEntityFactory gameEntityFactory;
+
+
     RoundResponse playARound(GameEntity.GameEntityType gameEntity) {
-        GameEntity randomPlayed = GameEntityFactory.getRandomPlayed();
-        GameEntity playersChoice = GameEntityFactory.from(gameEntity).orElseThrow(() -> new RuntimeException("Game entity not recognized"));
+        GameEntity randomPlayed = gameEntityFactory.getRandomPlayed();
+        GameEntity playersChoice = gameEntityFactory.from(gameEntity).orElseThrow(() -> new RuntimeException("Game entity not recognized"));
         if (randomPlayed.beats(playersChoice)) {
-            return new RoundResponse("The computer picked " + randomPlayed.getName() + ", you lose", RoundResult.LOSS);
+            return new RoundResponse(messageSource.getMessage("computerPicked", null, LocaleContextHolder.getLocale()) + randomPlayed.getName() + ", you lose", RoundResult.LOSS);
         }
         if (playersChoice.beats(randomPlayed)) {
             return new RoundResponse("You beat computer who chose: " + randomPlayed.getName() + "!", RoundResult.WIN);
@@ -31,7 +40,7 @@ class GameService {
 
         RoundResponse(String secondParam, GameService.RoundResult firstParam) {
             this.text = secondParam;
-            this.result= firstParam;
+            this.result = firstParam;
         }
 
     }
