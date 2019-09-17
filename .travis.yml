@@ -11,6 +11,8 @@ cache:
     - node_modules
 before_script:
    - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+script:
+  - mvn clean install
 before_install:
   - docker pull openjdk:9
 deploy:
