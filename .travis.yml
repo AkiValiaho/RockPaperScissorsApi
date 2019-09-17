@@ -1,4 +1,8 @@
 language: java
+addons:
+  apt:
+    packages:
+      - oracle-java9-installer
 services:
   - docker
 cache:
