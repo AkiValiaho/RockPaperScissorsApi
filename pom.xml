@@ -79,7 +79,7 @@
                         <goals>
                             <goal>exec</goal>
                         </goals>
-                        <phase>prepare-package</phase>
+                        <phase>clean</phase>
                         <configuration>
                             <executable>npm</executable>
                             <arguments>
@@ -93,7 +93,7 @@
                         <goals>
                             <goal>exec</goal>
                         </goals>
-                        <phase>prepare-package</phase>
+                        <phase>clean</phase>
                         <configuration>
                             <executable>npm</executable>
                             <arguments>
@@ -110,7 +110,7 @@
                 <executions>
                     <execution>
                         <id>copy Vue.js frontend content</id>
-                        <phase>prepare-package</phase>
+                        <phase>clean</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
