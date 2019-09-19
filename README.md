@@ -5,5 +5,8 @@
 Code work for tech interviews.
 Gets built in travis and auto-deployed with a blue/green model to heroku.
 
-Api is live at (with swagger-doc): 
+Game is live at: 
 https://rockpaperscissorsaki.herokuapp.com
+
+Swagger docs:
+https://rockpaperscissorsaki.herokuapp.com/swagger-ui.html
