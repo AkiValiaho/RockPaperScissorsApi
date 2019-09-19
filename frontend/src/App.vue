@@ -10,6 +10,11 @@ export default {
   name: 'App'
 }
 </script>
+<script>
+  export default {
+      name: 'Chat'
+  }
+</script>
 
 <style>
 #app {

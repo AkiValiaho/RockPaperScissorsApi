@@ -10,6 +10,10 @@
         >
         Game Built with
         </a>
+        </li>
+        <li>
+        <a
+        href="https://rockpaperscissorsaki.herokuapp.com/swagger-ui.html">Swagger api doc</a>
       </li>
     </ul>
   </div>
