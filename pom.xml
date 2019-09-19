@@ -77,8 +77,20 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.3.2</version>
                 <executions>
-                    <!-- Required: The following will ensure `npm install` is called
-                         before anything else during the 'Default Lifecycle' -->
+                    <execution>
+                        <id>npm install (initialize)</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
+                            <basedir>frontend</basedir>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>npm run build (initialize)</id>
                         <goals>
