@@ -4,6 +4,6 @@ if [[ "$?" -ne 1 ]] ; then
   heroku container:login
   heroku container:push web --app rockpaperscissorsaki
   heroku container:release web --app rockpaperscissorsaki
-  else echo "Build fails, don't push"
+  else echo "Build fails, don't push"; exit $rc
 fi
 
