@@ -1,4 +1,5 @@
 #!/bin/bash
+mvn clean install
 if [[ "$?" -ne 1 ]] ; then
   echo 'Build is okay, pushing';
   heroku container:login
