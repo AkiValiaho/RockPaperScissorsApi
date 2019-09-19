@@ -21,6 +21,7 @@ public class CustomLanguageWebMvcConfiguration implements WebMvcConfigurer {
 
     @Bean
     LocaleChangeInterceptor localeChangeInterceptor() {
+        //Interceptor checks for the req parameter "lang" to scan for
         LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
         lci.setParamName("lang");
         return lci;
